@@ -5,54 +5,50 @@
  */
 package DataStructure;
 
-import sun.awt.image.ImageWatched;
-
 /**
  *
  * @author Abhishek
  */
-public class CircularLinkList {
-    class node{
+public class DoublyLinkList {
+    
+     class node{
     int data;
     node next;
+    node privious;
     }
     node start=null;
     
     public static void main(String[] args) {
  
-         CircularLinkList ls=new CircularLinkList();
+         DoublyLinkList ls=new DoublyLinkList();
          
          for(int i=1;i<7;i++){
            ls.insert(i);
-         }
-         ls.remove(5);
          
+         }
+         ls.remove(5);   
          ls.insert(45);
          ls.remove(45);
-         
-         ls.searchAll(10);
-         
+         ls.searchAll();
+      
         
-   }
+    }
    
   void insert(int n){
   node temp=new node();
   temp.data=n;    
-  temp.next=null;
   
   if(start==null){
    start=temp;
-   temp.next=start;
   }
   else{
     node pre=start;
-    while(pre.next!=start){
+    while(pre.next!=null){
       pre=pre.next;
               
     }
-    temp.next=start; 
-    pre.next=temp;
-     
+     pre.next=temp;
+     temp.privious=pre;
      
   } 
   }  
@@ -68,7 +64,11 @@ public class CircularLinkList {
   
   while(temp!=null){
       if(temp.next.data==d){ 
-      temp.next=temp.next.next;
+          temp.next=temp.next.next;
+          if(temp.next==null)
+              break;
+         temp.next.privious=temp;
+          
        break;
       }           
      temp=temp.next;
@@ -80,17 +80,12 @@ public class CircularLinkList {
   }
   
   
-   void searchAll(int i){
+   void searchAll(){
      node temp=start;
        System.out.println("-------LINK  LIST ------");
-    
-       while(i-->0){
+     while(temp!=null){
          System.out.print("   "+temp.data);
        temp=temp.next;
      }
-       
-   
    }
-    
-    
 }
