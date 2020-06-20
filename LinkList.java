@@ -12,6 +12,7 @@ import sun.awt.image.ImageWatched;
  * @author Abhishek
  */
 public class LinkList {
+    
     class node{
     int data;
     node next;

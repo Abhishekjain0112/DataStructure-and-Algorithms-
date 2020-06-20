@@ -42,14 +42,23 @@ public class EpamInterviewQuestuon {
                                                   //   System.out.println(" List d :"+d);       
         
   
+      System.out.println("------------------------------------");
     
+        Set <Integer> aa=new HashSet<>(Arrays.asList(new Integer[]{7,99,1,5,7,6,3}));
+        Set <Integer> bb=new HashSet<>(b);
+        Set <Integer> cc=new HashSet<>(bb);
+        System.out.println(" List a :"+aa);
+        System.out.println(" List b :"+bb);
+      
+      aa.removeAll(bb);
+        bb.removeAll(aa);
+        
+        System.out.println("My Unique Set aa :" +aa);
+        System.out.println("My Unique Set bb:" +bb);
     
-        Set <Integer> aa=new HashSet<>(Arrays.asList(new Integer[]{1,2,3,4,5,6}));
-        Set <Integer> bb=new HashSet<>(b);  
-        aa.removeAll(bb);
-        System.out.println("My Unique Set :" +aa);
-    
-    
+        System.out.println("My Full Unique Set :" +cc);
+        
+  //  TreeMa
     
     
     }
