@@ -29,55 +29,57 @@ public class MergeSort1 {
         
          System.out.println(" Befor the Marge Sort "+ Arrays.toString(arr));
         
-         mergesort(arr, 0, n);
+         mergesort(arr, 0, n-1);
         
          System.out.println(" After the Marge Sort "+ Arrays.toString(arr));       
         
         
     }
  
-    static int[] mergesort(int arry[], int  start , int end){
-        System.out.println("length :" +arry.length +"start : "+start +"end : "+end
-        +" arrays : "+Arrays.toString(arry));
-    if (end -start==1){
-       return arry;
-    }
-    
-    int mid = arry.length/2;
-   
-    int a[]= mergesort(arry,start,mid);
-    int b[]= mergesort(arry,mid,end);
-    
-    int c[]= merge(a,b);        
+    static void mergesort(int arry[], int  start , int end){
         
-        
-        return c;
-    }
+    // System.out.println("length :" +arry.length +"start : "+start +"end : "+end
+      //  +" arrays : "+Arrays.toString(arry));
+    if (start<end){
+    int mid = (start+end)/2;
+     mergesort(arry,start,mid);
+     mergesort(arry,mid+1,end);
   
-    static int[] merge(int a[],int b[]){
-    int lenA=a.length;
-    int lengB=b.length;   
-    int c[] =new int[lenA+lengB];
+     merge(arry,start,mid,end);             
+           
+     }
     
+    }
+    static void merge(int arry[],int start,int mid, int end){
+    int lenA=mid-start+1;
+    int lengB=end-mid;
     
-    int i=0,j=0,k=0;
+ 
+    int a[] =new int[lenA];
+    int b[] =new int[lengB];
+    
+    for(int i = 0; i<lenA;i++){
+       a[i]=arry[start+i];
+    }
+    for(int i = 0; i<lengB;i++){
+       b[i]=arry[mid+i+1];
+    }    
+    int i=0,j=0,k=start;
+    
    while(i<lenA && j <lengB){
        if(a[i]<=b[j]){
-        c[k++]=a[i++];
+        arry[k++]=a[i++];
        }else{
-        c[k++]=b[j++];
+        arry[k++]=b[j++];
        }
    }
    if(i<lenA)
      while(i < lenA)
-          c[k++]=a[i++];
-   else     
-       while(i < lenA)
-          c[k++]=a[i++];
+          arry[k++]=a[i++];
+   else if(j<lengB)   
+       while(i < lengB)
+          arry[k++]=a[i++];
      
-    
-    
-    return c;
     }
     
 }

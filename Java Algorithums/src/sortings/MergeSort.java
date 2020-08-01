@@ -38,16 +38,31 @@ public class MergeSort {
  
     static int[] mergesort(int arry[], int  start , int end){
         System.out.println("length :" +arry.length +"start : "+start +"end : "+end
-        +" arrays : "+Arrays.toString(arry));
-    if (end -start==1){
+        +" arrays : ");
+    if (end-start<1){
        return arry;
     }
-    
-    int mid = arry.length/2;
+     int mid = (end-start)/2;
+     System.out.println("");
+   System.out.print("A array : " );
+    for(int i=start;i<mid;i++){
+        System.out.print(" "+arry[i]);
+    }
+        System.out.println("");
    
     int a[]= mergesort(arry,start,mid);
-    int b[]= mergesort(arry,mid,end);
     
+      System.out.println("");
+        System.out.print("B array : " );
+    for(int i=mid;i<end;i++){
+        System.out.print(" " +arry[i]);
+    }        
+    
+    int b[]= mergesort(arry,mid+1,end);
+
+    
+    //    System.out.println("A array : " +Arrays.toString(a) + "B Arrays : "+Arrays.toString(b));
+             
     int c[]= merge(a,b);        
         
         
@@ -81,3 +96,5 @@ public class MergeSort {
     }
     
 }
+/*6
+   7 89 45 2 99 105 26   */
