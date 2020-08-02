@@ -5,37 +5,41 @@
  */
 package coursera;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.Arrays;
+import java.util.StringTokenizer;
+
 /**
  *
  * @author Abhishek
  */
-import java.io.*;
-import java.util.*;
-
-public class BinarySearch {
-
-    static int binarySearch(int[] a, int l, int h,int x) {
-        int left = 0, right = a.length;
-        //write your code here
-        if(l<h){
-            
-        int mid=(l+h)/2;
-        if(a[mid]==x)
-            return mid;
+public class MajorityElement {
+    
+  private static int getMajorityElement(int[] a, int left, int right) {
  
-        if(x<a[mid])
-            return binarySearch(a, l, mid, x);
-        else if(x>a[mid])
-            return binarySearch(a, mid+1, h, x);
-            
-        }
-        return -1;
-    }
-
-    static int linearSearch(int[] a, int x) {
-        for (int i = 0; i < a.length; i++) {
-            if (a[i] == x) return i;
-        }
+      Arrays.sort(a);
+      
+      int half=a.length/2;
+      int temp=a[0];
+      int count=1;
+      for(int i=1;i<a.length;i++){
+      if(temp ==a[i]){
+        count++;
+        if(count>half)
+            return count;
+      }else{
+        count=0;  
+        count++;
+        temp=a[i];
+      }
+          
+      
+      }
+      
+        //write your code here
         return -1;
     }
 
@@ -46,16 +50,11 @@ public class BinarySearch {
         for (int i = 0; i < n; i++) {
             a[i] = scanner.nextInt();
         }
-        int m = scanner.nextInt();
-        int[] b = new int[m];
-        for (int i = 0; i < m; i++) {
-          b[i] = scanner.nextInt();
-        }
-        for (int i = 0; i < m; i++) {
-            //replace with the call to binarySearch when implemented
-         //   System.out.print(linearSearch(a, b[i]) + " ");
-           System.out.print(binarySearch(a,0,a.length,b[i]) + " "); 
-            
+		
+        if (getMajorityElement(a, 0, a.length) != -1) {
+            System.out.println(1);
+        } else {
+            System.out.println(0);
         }
     }
     static class FastScanner {
@@ -86,3 +85,4 @@ public class BinarySearch {
         }
     }
 }
+
