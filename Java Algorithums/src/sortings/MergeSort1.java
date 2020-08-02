@@ -83,3 +83,9 @@ public class MergeSort1 {
     }
     
 }
+
+/*
+test input
+6
+   7 89 45 2 99 105 26   */
+
