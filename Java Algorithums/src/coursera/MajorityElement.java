@@ -34,6 +34,9 @@ public class MajorityElement {
         count=0;  
         count++;
         temp=a[i];
+        if(count>half)
+            return count;        
+        
       }
           
       
