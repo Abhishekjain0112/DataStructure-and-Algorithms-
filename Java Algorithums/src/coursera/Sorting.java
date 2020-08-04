@@ -31,13 +31,14 @@ public class Sorting {
         int x = a[l];
         int j = l;
         for (int i = l + 1; i <= r; i++) {
-            if (a[i] <= x) {
+            if (a[i] < x) {
                 j++;
                 int t = a[i];
                 a[i] = a[j];
                 a[j] = t;
             }
         }
+        
         int t = a[l];
         a[l] = a[j];
         a[j] = t;      
@@ -52,7 +53,7 @@ public class Sorting {
       
       
       int[] m = {m1, j};
-  System.out.println("Quick Sort "+ Arrays.toString(a)+" start ind :"+l +" end : "+r+"  pivot :"+a[l] +" return : "+Arrays.toString(m));    
+ // System.out.println("Quick Sort "+ Arrays.toString(a)+" start ind :"+l +" end : "+r+"  pivot :"+a[l] +" return : "+Arrays.toString(m));    
     
       return m;
     }
@@ -83,9 +84,9 @@ public class Sorting {
        // a[l] = a[k];
         //a[k] = t;
         //use partition3
-        int []m = partition3(a, l, r);
-        randomizedQuickSort(a, l, m[0] - 1);
-        randomizedQuickSort(a, m[1] + 1, r);
+        int m = partition2(a, l, r);
+        randomizedQuickSort(a, l, m - 1);
+        randomizedQuickSort(a, m+ 1, r);
     }
 
     public static void main(String[] args) {
