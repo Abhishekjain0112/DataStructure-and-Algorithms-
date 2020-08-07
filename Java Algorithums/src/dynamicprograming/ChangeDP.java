@@ -21,7 +21,7 @@ public class ChangeDP {
         for(int i = 1;i<=m;i++){
            minimumcoins[i]=Integer.MAX_VALUE;
             for(int coinvalue:coins){
-                System.out.println("coin value :" + coinvalue + " i :" +i);
+           //     System.out.println("coin value :" + coinvalue + " i :" +i);
                 if(coinvalue<=i){
                 
                 int mincoin=minimumcoins[i-coinvalue]+1;
@@ -33,7 +33,7 @@ public class ChangeDP {
         }
         
         
-        System.out.println(" arrays :" +Arrays.toString(minimumcoins));
+       // System.out.println(" arrays :" +Arrays.toString(minimumcoins));
         
         return minimumcoins[m];
     }
