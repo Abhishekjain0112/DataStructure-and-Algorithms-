@@ -25,14 +25,34 @@ public class EditDistance {
       for(int i=0;i<=len2;i++){
         matrix[0][i]=i;
       }      
+
+ 
       
+       for(int i =1; i<=len1;i++){
+     for(int j =1;j<=len2;j++){
+           if(s.charAt(i-1)==t.charAt(j-1))
+           {
+            matrix[i][j]=matrix[i-1][j-1];
+           }else{
+           matrix[i][j]=min(matrix[i-1][j-1], matrix[i][j-1], matrix[i-1][j])+1;
+           }
+      }
+   }    
+      
+      
+      
+      
+      
+      /*
    for(int i =0; i<=len1;i++){
      for(int j =0;j<=len2;j++){
          System.out.print(" "+matrix[i][j]);
      }System.out.println("");
-   }  
+   }  */
+   
+   
       
-      return 0;
+      return matrix[len1][len2];
   }
   public static void main(String args[]) {
     Scanner scan = new Scanner(System.in);
@@ -42,5 +62,21 @@ public class EditDistance {
 
     System.out.println(EditDistance(s, t));
   }
+
+
+
+public static int min(int a,int b,int c){
+    int min=a;
+
+     if(b<min)
+         min =b;
+     if(c<min)
+         min=c;
+    
+    return min;
+   }
+
+
+
 
 }
