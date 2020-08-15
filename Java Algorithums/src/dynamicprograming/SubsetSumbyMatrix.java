@@ -20,7 +20,7 @@ public class SubsetSumbyMatrix {
          // matr = new boolean[n+1][sum+1];
           // Arrays.fill(matr,false);
        
-        int arr[] ={3, 34, 4, 12, 5, 2}; //{3, 4, 5, 2};
+        int arr[] ={3, 4, 5, 2};//{3, 34, 4, 12, 5, 2}; //{3, 4, 5, 2};
         // int set[]={3, 34, 4, 12, 5, 2}; 
         int sum = 9; 
         int n = arr.length; 
@@ -36,7 +36,7 @@ public class SubsetSumbyMatrix {
        for(int i =1;i<n+1;i++){  
            for(int j=1;j<sum+1;j++){
                
-              if(arr[i-1]<=j){
+              if(arr[i-1]<=j){  
                 matrix[i][j]= matrix[i-1][j-arr[i-1]] || matrix[i-1][j];
               } 
               else
