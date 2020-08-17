@@ -45,13 +45,8 @@ public class SubSetSum {
                                + " with given sum"); 
         else
             System.out.println("No subset with"
-                               + " given sum"); 
-     
-       // System.out.println("answer : "+isSubsetSum1(arr, n, sum));        
-        
-             
-     
-     
+                               + " given sum");  
+       // System.out.println("answer : "+isSubsetSum1(arr, n, sum));            
     }    
     
     
