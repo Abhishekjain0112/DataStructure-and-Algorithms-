@@ -32,7 +32,7 @@ public class Count_No_of_Subsets {
         for(int i =1; i<n+1;i++){
            for(int j=1;j<sum+1;j++){
                if(arr[i-1]<=j)
-                matrix[i][j]=matrix[i-1][j-arr[i-1]]+matrix[i-1][j];
+                matrix[i][j]=matrix[i-1][j-arr[i-1]]   +   matrix[i-1][j];
                else 
                 matrix[i][j]=matrix[i-1][j];               
            }
