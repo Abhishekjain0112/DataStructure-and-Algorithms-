@@ -51,13 +51,11 @@ public class QuickSort {
         }
     
     }
-    static int pivote(int []arr,int start,int end){
-    
+    static int pivote(int []arr,int start,int end){  
       int pivot =arr[start];
       //int i=start;
       int j=start;
-      for(int i=start+1;i<=end;i++){
-    
+      for(int i=start+1;i<=end;i++){ 
           if(arr[i]<=pivot){
          
               j++;
@@ -66,9 +64,7 @@ public class QuickSort {
           arr[i]=arr[j];
           arr[j]=temp;          
           }
-          
-
-      
+    
       }
         int temp1 = arr[j];
         arr[j]=arr[start];
