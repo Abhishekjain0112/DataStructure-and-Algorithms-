@@ -69,12 +69,22 @@ public class BuildHeap {
       }*/
       int n =data.length;
     for(int i=n/2;i>=0; i--){
+         heapify(i, n, swaps);
+     }  
+      
+      
+      
+    }
+
+    public void heapify(int i,int n,List<Swap> swaps)
+    {
+    
         int lowest=i;
         int left=i*2+1;
         int right=i*2+2;
         
         if(left<n  && data[left]<data[lowest])
-            lowest=left;
+            lowest=left;      
         if(right<n && data[right]<data[lowest])
             lowest=right;
         
@@ -83,14 +93,10 @@ public class BuildHeap {
         int swap=data[lowest];
         data[lowest]=data[i];
         data[i]=swap;
+        heapify(lowest, n, swaps);
         }
-        
-    }  
-      
-      
-      
+   
     }
-
     
     
     
