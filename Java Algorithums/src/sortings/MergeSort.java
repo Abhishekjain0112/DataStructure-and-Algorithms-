@@ -27,13 +27,10 @@ public class MergeSort {
             arr[i]=sc.nextInt();     
         }  
         
-         System.out.println(" Befor the Marge Sort "+ Arrays.toString(arr));
-        
-         mergesort(arr, 0, n);
-        
+         System.out.println(" Befor the Marge Sort "+ Arrays.toString(arr));    
+         mergesort(arr, 0, n);        
          System.out.println(" After the Marge Sort "+ Arrays.toString(arr));       
-        
-        
+                
     }
  
     static int[] mergesort(int arry[], int  start , int end){
