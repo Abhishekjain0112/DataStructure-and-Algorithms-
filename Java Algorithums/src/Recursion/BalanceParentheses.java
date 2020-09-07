@@ -41,8 +41,7 @@ public class BalanceParentheses {
      {
       String o2=output+")";
       bracket(o2 ,open, close-1, al);
-     }  
-      
+     }       
   }
     
     
