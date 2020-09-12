@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package DataStructure;
+package Trees;
 
 import java.util.Scanner;
 
@@ -32,7 +32,7 @@ public class BinaryTree {
         for(int i=1;i<=n;i++){
             System.out.print("Add Element "+i+" :");
           // tree.insert(sc.nextInt());
-            tree.insertbyRecurtion(tree.root,sc.nextInt());
+            tree.insertbyRecurtion2(tree.root,sc.nextInt());
         }
         
         System.out.println("InOrder");
@@ -137,6 +137,51 @@ public class BinaryTree {
      postOrder(node.right);
      System.out.print(" " +node.key);
  }
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ //just for testing perpose
+     void insertbyRecurtion2(Node root,int data){
+      
+        if(this.root==null)
+        {
+         this.root=new Node(data);
+         return;
+        }
+        
+        if(root==null)
+        {
+        root=new Node(data);
+        return;
+        }   
+        
+       if(data<root.key){
+            Node left=root.left;
+           insertbyRecurtion2(left,data);
+           root.left=left;
+           return;
+       }
+       else{
+           Node right=root.right;
+             insertbyRecurtion2(right, data);
+             root.right=right;
+         
+       }
+     
+    } 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  
  
 }
